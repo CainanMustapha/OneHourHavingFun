@@ -1,0 +1,44 @@
+﻿<div ng-controller="rockPaperScissors as ctrl" ng-If="game == 1" id="rpscontainer" class="container leftrightjustify">
+    <h1 title="Rock Paper and Scissors">{{title}}</h1>
+    <div>
+        <p>Lets Play!</p>
+
+        <div ng-If="gametype == 0">
+            <div>Choose</div>
+            <div>
+                <button ng-click="newgame(1)">Play Against Computer</button>
+            </div>
+            <div>
+                <button ng-click="computerPlay()">Auto Play</button>
+            </div>
+        </div>
+
+        <div ng-If="gametype != 0">
+            <div ng-If="!gameOn">
+                <button ng-click="newgame(0)">Reset</button>
+            </div>
+            <div ng-If="gameOn && gametype == 2">
+                <button ng-click="stopPlay()">Stop Auto Play</button>
+            </div>
+            <div>
+                <div><b>Computer</b>: {{scoreCard.ComputerScore}} versus <b>Player</b>: {{scoreCard.PlayerScore}}</div>
+            </div>
+            <div>
+                <div>Computer</div>
+                <div ng-If="computerHand!=-1">
+                    <hand-gesture hand="computerHand"></hand-gesture>
+                </div>
+            </div>
+            <div>
+                <div ng-If="gametype == 1">Player</div>
+                <div ng-If="gametype == 2">Auto Player</div>
+                <div ng-If="playerHand!=-1">
+                    <hand-gesture hand="playerHand"></hand-gesture>
+                </div>
+                <div ng-If="gametype == 1">
+                    <button ng-click="play()">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

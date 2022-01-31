@@ -1,0 +1,27 @@
+﻿
+<div ng-app="MainController" ng-controller="MainController as ctrl">
+    <div class="navbar navbar-inverse navbar-fixed-top center">
+        <div class="navbar-inner">
+            <div class="container center">
+                <div class="navbar-header">
+                    <a ng-click="select(0)" class="navbar-brand" href="/">
+                        <span class="color-white">Games for fun</span>
+                    </a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ng-click="select(1)" href="/">Rock Paper Scissors</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-If="game == 0" id="hcontainer" class="container leftrightjustify">
+        <h1>{{title}}</h1>
+        <p>{{welcomeMessage}}</p>
+    </div>
+
+    <div rock-paper-scissors></div>
+</div>
+
